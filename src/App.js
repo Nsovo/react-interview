@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import ShoeList from './components/ShoeList'
+import CartSummary from './components/CartSummary'
 import Api from './api';
 
 class App extends Component {
@@ -45,7 +46,8 @@ class App extends Component {
           </div>
 
           <div className="col s3">
-            Right?
+            <CartSummary cart={this.state.cart}>
+            </CartSummary>
           </div>
 
         </div>
