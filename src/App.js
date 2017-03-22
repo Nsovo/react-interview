@@ -1,29 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NavBar from './components/NavBar';
+import Method from './api/index'
 import ShoeList from './components/ShoeList'
 import CartSummary from './components/CartSummary'
 import Facet from './components/Facet'
-import Api from './api';
 
-class App extends Component {
+class App extends React.Component {
 
-  /**
-   * TIP:
-   *  - this.state = {...}
-   *  - this.someFunction = this.someFunction.bind(this)
-   * */
-  constructor(props) {
-    super(props);
-    this.state ={shoes:[], cart:[]}
-  }
+ constructor(props) {
+  super(props)
+  this.state = {shoes:[], cart:[],facetSelected:null}
+}
 
-  /**
-   * TIP:
-   *  - Api.getShoes() returns a promise
-   *  - this.setState() might be useful
-   * */
-  componentDidMount() {
-      const shoes =[]
+componentDidMount() {
+  let shoes =[]
   Method.getShoes().then((Shoe) => {
    for (var i = 0; i < Shoe.length; i++) {
     shoes.push({Id:Shoe[i].id,
@@ -32,43 +22,36 @@ class App extends Component {
       price:Shoe[i].price})
   } 
   this.setState({shoes: shoes})
-});
+})
+}
 
-  }
-
- handleShoeSelect (shoe,cart) {
+handleShoeSelect (shoe,cart) {
   this.setState({cart: this.state.cart.concat([shoe])});
 
 }
 
-  render() {
-    return (
-      <div>
 
-        <NavBar title="Hello World"/>
+render() {
+  return (
+    <div>
 
-        <div className="row">
+    <NavBar title="My App Store"/>
+    <div className="row">
+    <div className="col s6">
+    <ShoeList shoes={this.state.shoes} 
+    onShoeSelect={this.handleShoeSelect}>
 
-          <div className="col s3">
-            I am the left pane
-          </div>
+    </ShoeList >
+    </div>
 
-          <div className="col s6">
-            <ShoeList shoes={this.state.shoes}
-            onShoeSelect={this.handleShoeSelect}/>
-          </div>
+    <div className="col s3">
+    <CartSummary cart={this.state.cart} >
+    </CartSummary>
 
-          <div className="col s3">
-            <CartSummary cart={this.state.cart}>
-            </CartSummary>
-
-            <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} />
-
-          </div>
-
-        </div>
-      </div>
-
+    <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} />
+    </div>
+    </div>
+    </div>
     );
   }
 }
