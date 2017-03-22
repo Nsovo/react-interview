@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Shoe = (props) => (
-  <div>
-    Shoe
-  </div>
-);
-
+class Shoe extends React.Component{
+	render(){
+		return(
+			<div>
+			<span>{this.props.brand}</span>
+			</div>
+			)
+	}
+}
 Shoe.propTypes = {
   brand: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
