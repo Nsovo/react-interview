@@ -13,7 +13,7 @@ class App extends Component {
    * */
   constructor(props) {
     super(props);
-    this.state ={shoes:[]}
+    this.state ={shoes:[], cart:[]}
   }
 
   /**
@@ -25,8 +25,8 @@ class App extends Component {
 
   }
 
-  handleShoeSelect (shoe) {
-
+  handleShoeSelect (shoe,cart) {
+    this.setState({cart: this.state.cart.concat([shoe])})
   }
 
   render() {
@@ -42,7 +42,8 @@ class App extends Component {
           </div>
 
           <div className="col s6">
-            <ShoeList shoes={this.state.shoes}/>
+            <ShoeList shoes={this.state.shoes}
+            onShoeSelect={this.handleShoeSelect}/>
           </div>
 
           <div className="col s3">
