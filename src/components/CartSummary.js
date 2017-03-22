@@ -1,15 +1,31 @@
 import React from 'react';
 
-const CartSummary = (props) => {
-  return (
-    <div className="CartSummary">
-      CartSummary
-    </div>
-  )
-};
+class CartSummary extends React.Component {
 
-CartSummary.propTypes = {
-  cart: React.PropTypes.array.isRequired
-};
+	render(){
+		let cart =[]
+		let totalCost= 0
+		let totalItems =0
+		this.props.cart.map((item,i) => {
+			totalItems= i +1
+			totalCost += item.price;
+return cart ={ totalItems: totalItems,
+			totalCost:totalCost}
+		})
+		
 
-export default CartSummary;
+			return(
+				<div>
+				<span className="ItemCount" id="ItemCount">{cart.totalItems}</span>
+				<span className="TotalCost" id="TotalCost">{(cart.totalCost).toFixed(2)}</span>
+
+				</div>
+				)
+			}
+		}
+
+		CartSummary.propTypes = {
+			cart: React.PropTypes.array.isRequired
+		};
+
+		export default CartSummary;
