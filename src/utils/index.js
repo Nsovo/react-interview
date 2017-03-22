@@ -17,7 +17,7 @@
  * @param key A string of the object property
  */
 export function countByKey (arr, key) {
-let items =[]
+const items =[]
 	let brand =''
 			Array.from(new Set(arr)).map((item,i) =>{
 				if(item.brand != brand)

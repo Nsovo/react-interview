@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import ShoeList from './components/ShoeList'
 import CartSummary from './components/CartSummary'
+import Facet from './components/Facet'
 import Api from './api';
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
    *  - this.setState() might be useful
    * */
   componentDidMount() {
-      let shoes =[]
+      const shoes =[]
   Method.getShoes().then((Shoe) => {
    for (var i = 0; i < Shoe.length; i++) {
     shoes.push({Id:Shoe[i].id,
@@ -60,6 +61,9 @@ class App extends Component {
           <div className="col s3">
             <CartSummary cart={this.state.cart}>
             </CartSummary>
+
+            <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} />
+
           </div>
 
         </div>
