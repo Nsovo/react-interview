@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
+import ShoeList from './components/ShoeList'
 import Api from './api';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
    * */
   constructor(props) {
     super(props);
+    this.state ={shoes:[]}
   }
 
   /**
@@ -39,7 +41,7 @@ class App extends Component {
           </div>
 
           <div className="col s6">
-            I am in the middle
+            <ShoeList shoes={this.state.shoes}/>
           </div>
 
           <div className="col s3">
