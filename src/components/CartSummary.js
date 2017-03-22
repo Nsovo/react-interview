@@ -11,7 +11,7 @@ class CartSummary extends React.Component {
 			totalCost += item.price;
 return cart ={ totalItems: totalItems,
 			totalCost:totalCost}
-		})
+		});
 		
 
 			return(

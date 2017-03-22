@@ -22,11 +22,21 @@ class App extends Component {
    *  - this.setState() might be useful
    * */
   componentDidMount() {
+      let shoes =[]
+  Method.getShoes().then((Shoe) => {
+   for (var i = 0; i < Shoe.length; i++) {
+    shoes.push({Id:Shoe[i].id,
+      brand:Shoe[i].brand,
+      name:Shoe[i].name,
+      price:Shoe[i].price})
+  } 
+  this.setState({shoes: shoes})
+})
 
   }
 
   handleShoeSelect (shoe,cart) {
-    this.setState({cart: this.state.cart.concat([shoe])})
+    this.setState({cart: this.state.cart.concat([shoe])});
   }
 
   render() {

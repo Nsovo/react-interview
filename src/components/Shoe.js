@@ -8,6 +8,7 @@ class Shoe extends React.Component{
 			<br />
 			{(this.props.price).toFixed(2)}
 			</span>
+			 <span><a onClick={() =>this.props.onShoeSelect({id:this.props.id,brand: this.props.brand,name: this.props.name,price:this.props.price}) } /></span>
 			</div>
 			)
 	}
