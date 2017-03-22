@@ -3,8 +3,8 @@ import {countByKey} from '../utils';
 
 class Facet extends React.Component {
 	render(){
-		let brandList = []
-		let listItems =[]
+		const brandList = []
+		const listItems =[]
 
 
 		this.props.items.map((item) =>{
