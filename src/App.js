@@ -13,7 +13,7 @@ class App extends React.Component {
 }
 
 componentDidMount() {
-  let shoes =[]
+  const shoes =[]
   Method.getShoes().then((Shoe) => {
    for (var i = 0; i < Shoe.length; i++) {
     shoes.push({Id:Shoe[i].id,
@@ -27,9 +27,14 @@ componentDidMount() {
 
 handleShoeSelect (shoe,cart) {
   this.setState({cart: this.state.cart.concat([shoe])});
-
 }
 
+handleFacetSelect(facet,facetSelected){
+  var filteredFacet = this.state.facetSelected.filter(facet)
+  this.setState({
+    facetSelected:[filteredFacet]
+  })
+}
 
 render() {
   return (
