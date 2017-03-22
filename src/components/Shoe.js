@@ -4,7 +4,10 @@ class Shoe extends React.Component{
 	render(){
 		return(
 			<div>
-			<span>{this.props.brand}</span>
+			<span>{this.props.brand} > {this.props.name}
+			<br />
+			{(this.props.price).toFixed(2)}
+			</span>
 			</div>
 			)
 	}
