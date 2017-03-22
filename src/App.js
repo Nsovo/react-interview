@@ -31,13 +31,14 @@ class App extends Component {
       price:Shoe[i].price})
   } 
   this.setState({shoes: shoes})
-})
+});
 
   }
 
-  handleShoeSelect (shoe,cart) {
-    this.setState({cart: this.state.cart.concat([shoe])});
-  }
+ handleShoeSelect (shoe,cart) {
+  this.setState({cart: this.state.cart.concat([shoe])});
+
+}
 
   render() {
     return (

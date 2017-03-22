@@ -9,7 +9,7 @@ class ShoeList extends React.Component{
 			{
 				this.props.shoes.map((item) =>{
 					return (<Shoe shoe={item}
-						onShoeSelect={this.porps.onShoeSelect}
+						onShoeSelect={this.props.onShoeSelect}
 						brand={item.brand}
 						name={item.name}
 						price={item.price}
