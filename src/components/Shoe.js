@@ -3,12 +3,17 @@ import React from 'react';
 class Shoe extends React.Component{
 	render(){
 		return(
-			<div>
+			<div className="row">
+			<div className="col s8 shoeList">
 			<span>{this.props.brand} > {this.props.name}
 			<br />
 			{(this.props.price).toFixed(2)}
 			</span>
-			 <span><a onClick={() =>this.props.onShoeSelect({id:this.props.id,brand: this.props.brand,name: this.props.name,price:this.props.price}) } /></span>
+			<div>
+			<a className="orangeLink" href="#"> Add to cart
+			</a>
+			</div>
+			</div>
 			</div>
 			)
 	}

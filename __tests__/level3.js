@@ -91,7 +91,7 @@ describe('App', () => {
   });
 
   it('the instance method should update `statehandleFacetSelect.facetSelected` to null if a shoe is selected already (toggle off)', () => {
-    // WRITE THIS TEST!
+      // WRITE THIS TEST! THIS IS THE MAIN ONE
     return false;
   });
 
@@ -107,7 +107,9 @@ describe('App', () => {
   });
 
   it('the list of shoes display should be filter based on the facet selected', () => {
-    // WRITE THIS TEST! THIS IS THE MAIN ONE
-    return false;
+      const selectSpy = jest.fn();
+      const wrapper = shallow(<Facet items={mockShoes} onFacetSelect={selectSpy}/>);
+      console.log(selectSpy.mock.calls)
+      expect(selectSpy.mock.calls.length).toEqual(1);
   });
 });

@@ -13,7 +13,7 @@ class ShoeList extends React.Component{
 						brand={item.brand}
 						name={item.name}
 						price={item.price}
-						key ={item.id} >
+						key={item.id} >
 						{item.brand} > {item.name}
 						<br />
 						{item.price}
