@@ -19,3 +19,11 @@ body {
 	color: orange;
 	font-size: 12px;
 }
+
+.cartFont{
+	font-weight: bold;
+}
+
+.cartItems{
+	font-size: 8px;
+}

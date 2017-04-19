@@ -1,6 +1,15 @@
 import React from 'react';
 
 class Shoe extends React.Component{
+
+			_handleClick () {
+				const shoe = {id:this.props.id,
+					brand: this.props.brand,
+					name: this.props.name,
+					price:this.props.price}
+				this.props.onShoeSelect(shoe)
+}
+
 	render(){
 		return(
 			<div className="row">
@@ -10,7 +19,7 @@ class Shoe extends React.Component{
 			{(this.props.price).toFixed(2)}
 			</span>
 			<div>
-			<a className="orangeLink" href="#"> Add to cart
+			<a className="orangeLink" onClick={this._handleClick.bind(this)} href="#"> Add to cart
 			</a>
 			</div>
 			</div>

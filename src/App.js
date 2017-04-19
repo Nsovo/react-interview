@@ -10,6 +10,7 @@ class App extends React.Component {
  constructor(props) {
   super(props)
   this.state = {shoes:[], cart:[],facetSelected:null}
+  this.handleShoeSelect = this.handleShoeSelect.bind(this)
 }
 
 componentDidMount() {
@@ -23,8 +24,9 @@ componentDidMount() {
     })
 }
 
-handleShoeSelect (shoe,cart) {
-  this.setState({cart: this.state.cart.concat([shoe])});
+handleShoeSelect (shoe) {
+ this.setState({cart: this.state.cart.concat([shoe])});
+
 }
 
 handleFacetSelect(facet,facetSelected){
@@ -35,7 +37,6 @@ handleFacetSelect(facet,facetSelected){
 }
 
 render() {
-  console.log(this.state.facetSelected)
   return (
     <div>
 
