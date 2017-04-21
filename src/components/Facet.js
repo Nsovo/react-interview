@@ -14,7 +14,6 @@ class Facet extends React.Component {
 	}
 
 	removeItem(removeItem){
-		console.log('here');
 		var newItems = this.state.items.filter(function(item){
 			return item !== removeItem
 		});
