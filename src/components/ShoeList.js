@@ -5,23 +5,23 @@ class ShoeList extends React.Component{
 
 	render(){
 		return(
-		<div>
-			{
-				this.props.shoes.map((item) =>{
-					return (<Shoe shoe={item}
-						onShoeSelect={this.props.onShoeSelect}
-						brand={item.brand}
-						name={item.name}
-						price={item.price}
-						key={item.id} >
-						{item.brand} > {item.name}
-						<br />
-						{item.price}
-						</Shoe>)
-					
-				})
-			}
-		</div>
+			<div>
+				{
+					this.props.shoes.map((item) =>{
+						return (<Shoe shoe={item}
+							onShoeSelect={this.props.onShoeSelect}
+							brand={item.brand}
+							name={item.name}
+							price={item.price}
+							key={item.id} >
+							{item.brand} > {item.name}
+							<br />
+							{item.price}
+							</Shoe>)
+						
+					})
+				}
+			</div>
 		)
 	}
 }

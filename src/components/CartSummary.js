@@ -2,8 +2,9 @@ import React from 'react';
 
 class CartSummary extends React.Component {
 
+
+
 	render(){
-		let cart =[]
 		let totalCost= 0
 		let totalItems =0
 
@@ -11,22 +12,23 @@ class CartSummary extends React.Component {
 			if(item ===0)
 				return "";
 
-
-
-			totalItems= i +1
+			totalItems= i+1
 			totalCost += item.price;
-			return cart ={ totalItems: totalItems,
-			totalCost:totalCost.toFixed(2)}
+			return { totalItems: totalItems,
+			totalCost:totalCost}
 		});
 		
 
 			return(
-				<div className="cartFont"> My cart
-				<div className="cartItems">
-				<div  id="ItemCount">Total items:{cart.totalItems}</div>
-				<div  id="TotalCost">Total ost :{(cart.totalCost )}</div>
-				</div>
-				</div>
+					<div className="cartFont"> 
+					<h5>My cart </h5>
+						<div className="cartItems">
+							Total items:<span  id="ItemCount">{totalItems}</span>
+						</div>
+						<div className="cartItems">
+							Total cost R:<span  id="TotalCost">{(totalCost).toFixed(2)}</span>
+						</div>
+					</div>
 				)
 			}
 		}

@@ -6,13 +6,15 @@ body {
 
 
 .shoeList{
- 	margin-left: 27% ! important;
     background-color: #fff;
-    margin-bottom:10px;
     border: solid 1px #f2e9e9;
     font-weight: normal;
     font-size: 15px;
     font-family: sans-serif;
+}
+
+.cart{
+  border-top: solid 1px #f2e9e9;
 }
 
 .orangeLink{
