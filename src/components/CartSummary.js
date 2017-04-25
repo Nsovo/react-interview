@@ -2,8 +2,6 @@ import React from 'react';
 
 class CartSummary extends React.Component {
 
-
-
 	render(){
 		let totalCost= 0
 		let totalItems =0

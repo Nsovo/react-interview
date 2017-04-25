@@ -1,7 +1,7 @@
 
 
 export function countByKey (arr, key) {
-	var items =[];
+	const items =[];
 	 arr.reduce(function(item,prev, cur) {
 
   				prev[cur] = (prev[cur] || 0) + 1;

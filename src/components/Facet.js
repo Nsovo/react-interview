@@ -8,13 +8,13 @@ class Facet extends React.Component {
 	}
 
 	handleClick () {
-		let items  = countByKey(this.props.items);
+		const items  = countByKey(this.props.items);
 		this.state.items.push(items)
   		this.setState({items: items});
 	}
 
 	removeItem(removeItem){
-		var newItems = this.state.items.filter(function(item){
+		let newItems = this.state.items.filter(function(item){
 			return item !== removeItem
 		});
 
@@ -24,7 +24,7 @@ class Facet extends React.Component {
 	
 
 	render(){
-		var cartList = this.state.items;
+		const cartList = this.state.items;
 
 		return(
 			<div> 

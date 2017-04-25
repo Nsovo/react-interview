@@ -2,7 +2,6 @@ import React from 'react';
 import Shoe from './Shoe';
 
 class ShoeList extends React.Component{
-
 	render(){
 		return(
 			<div>
